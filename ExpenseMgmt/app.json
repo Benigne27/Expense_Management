@@ -1,0 +1,27 @@
+{
+  "expo": {
+    "name": "ExpenseMgmt",
+    "slug": "ExpenseMgmt",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/mono.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash(12).png",
+      "resizeMode": "contain",
+      "backgroundColor": "#2a7c76"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#2a7c76"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}
