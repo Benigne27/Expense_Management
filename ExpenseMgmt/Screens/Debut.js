@@ -8,13 +8,15 @@ import {
   View,
 } from "react-native";
 import React from "react";
+import { StatusBar } from "expo-status-bar";
 
 const height = Dimensions.get("screen").height;
 const width = Dimensions.get("screen").width;
 
-export default function Debut() {
+export default function Debut({ navigation }) {
   return (
     <View style={styles.container}>
+      <StatusBar style="auto"/>
       <SafeAreaView></SafeAreaView>
       <View>
         <Image
@@ -25,7 +27,10 @@ export default function Debut() {
       <View style={{ height: 120 }}></View>
       <Text style={styles.SaveText}>Spend Smarter {"\n"} Save More</Text>
       <View style={{ height: 50 }}></View>
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => navigation.navigate("SignUp")}
+      >
         <Text style={styles.buttonText}>Get Started</Text>
       </TouchableOpacity>
       <View style={{ height: 50 }}></View>
@@ -40,9 +45,14 @@ export default function Debut() {
           }}
         >
           Already have an account?
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate("Login")}>
             <Text
-              style={{ color: "#69AEA9", fontSize: 15, fontWeight: "bold", top:2 }}
+              style={{
+                color: "#69AEA9",
+                fontSize: 15,
+                fontWeight: "bold",
+                top: 2,
+              }}
             >
               {" "}
               Log In
