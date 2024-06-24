@@ -14,7 +14,7 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 const width = Dimensions.get("screen").width;
 const height = Dimensions.get("screen").height;
 
-export default function SignUp() {
+export default function SignUp({navigation}) {
   return (
     <View>
       <ImageBackground
@@ -26,17 +26,48 @@ export default function SignUp() {
           colors={["transparent", "black"]}
           start={[0, 0.1]}
           end={[0,0.6]}
-        >
+        ></LinearGradient>
             <TouchableOpacity style={styles.googleButton}>
                 <Image source={require('../assets/GoogleLogo.png')} style={styles.google}/>
-                <Text>Sign Up with Google</Text>
+                <Text style={styles.SignText}>Sign Up with Google</Text>
             </TouchableOpacity>
             <View style={{height:20}}></View>
             <Text style={styles.Text}>Or</Text>
             <View style={{height:20}}></View>
-            <Input placeholder={'Email'} icon={"email-outline"} secureTextEntry={false}/>
-        <Input placeholder={'Password'} icon={'key-outline'} secureTextEntry={true}/>
-        </LinearGradient>
+            <Input placeholder={'Email'} icon={"email"} secureTextEntry={false}/>
+        <Input placeholder={'Password'} icon={'key'} secureTextEntry={true}/>
+        <View style={{height:30}}></View>
+        <TouchableOpacity style={styles.LogButton} onPress={()=>navigation.navigate('Login')}>
+            <Text style={styles.LogText}>Sign Up</Text>
+        </TouchableOpacity>
+        <View style={{height:30}}></View>
+        <View>
+        <Text
+          style={{
+            fontSize: 15,
+            fontWeight: "bold",
+            alignItems: "center",
+            justifyContent: "center",
+            display: "flex",
+            color:'white'
+          }}
+        >
+          Already have an account?
+          <TouchableOpacity onPress={() => navigation.navigate("Login")}>
+            <Text
+              style={{
+                color: "#69AEA9",
+                fontSize: 15,
+                fontWeight: "bold",
+                top: 2,
+              }}
+            >
+              {" "}
+              Log In
+            </Text>
+          </TouchableOpacity>
+        </Text>
+      </View>
       </ImageBackground>
     </View>
   );
@@ -46,6 +77,11 @@ const styles = StyleSheet.create({
   ImgBg: {
     height: height,
     width: width,
+    position:'relative',
+    display:'flex',
+    alignItems:'center',
+    justifyContent:'flex-end',
+    paddingBottom:50,
     // transform:[{rotate:'180deg'}]
    
   },
@@ -53,10 +89,8 @@ const styles = StyleSheet.create({
     height: height,
     width: width,
     opacity: 0.87,
-    display:'flex',
-    alignItems:'center',
-    justifyContent:'flex-end',
-    paddingBottom:200
+   
+    position:'absolute'
     // justifyContent:'center'
   },
   googleButton:{
@@ -68,7 +102,7 @@ const styles = StyleSheet.create({
     width:350,
     backgroundColor:'white',
     borderRadius:40,
-    gap:20
+    gap:10
   },
   google:{
     height:30,
@@ -77,6 +111,27 @@ const styles = StyleSheet.create({
   Text:{
     fontSize:20,
     color:'white',
+    fontWeight:'bold'
+  },
+  SignText:{
+    fontSize:20
+  },
+  LogButton:{
+    display:"flex",
+    flexDirection:'row',
+    alignItems:'center',
+    justifyContent:'center',
+    height:70,
+    width:350,
+    backgroundColor:'#69AEA9',
+    borderRadius:40,
+    shadowOffset:{width:3, height:3},
+    shadowColor:'white',
+    shadowOpacity:0.4
+  },
+  LogText:{
+    color:'white',
+    fontSize:20,
     fontWeight:'bold'
   }
  
