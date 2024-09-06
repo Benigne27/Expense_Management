@@ -37,7 +37,7 @@ import {
               <Input placeholder={'Email'} icon={"email"} secureTextEntry={false}/>
           <Input placeholder={'Password'} icon={'key'} secureTextEntry={true}/>
           <View style={{height:30}}></View>
-          <TouchableOpacity style={styles.LogButton} onPress={()=>navigation.navigate('Home')}>
+          <TouchableOpacity style={styles.LogButton} onPress={()=>navigation.navigate('Home1')}>
               <Text style={styles.LogText}>Log In</Text>
           </TouchableOpacity>
           <View style={{height:30}}></View>

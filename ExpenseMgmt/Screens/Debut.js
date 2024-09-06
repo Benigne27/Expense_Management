@@ -20,12 +20,12 @@ export default function Debut({ navigation }) {
       <SafeAreaView></SafeAreaView>
       <View>
         <Image
-          source={require("../assets/Man_coins.png")}
+          source={require("../assets/Scan.png")}
           style={styles.ManImage}
         />
       </View>
       <View style={{ height: 120 }}></View>
-      <Text style={styles.SaveText}>Spend Smarter {"\n"} Save More</Text>
+      <Text style={styles.SaveText}>Scan Smart {"\n"} Work Fast</Text>
       <View style={{ height: 50 }}></View>
       <TouchableOpacity
         style={styles.button}
@@ -73,8 +73,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   ManImage: {
-    height: 400,
-    width: 300,
+    // height: 300,
+    // width: 400,
     top: 80,
   },
   SaveText: {

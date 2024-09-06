@@ -20,7 +20,7 @@ export default function HomePage() {
         source={require("../assets/HomeTop.png")}
         style={styles.HomeTop}
       ></ImageBackground>
-      <View style={styles.OverLay}></View>
+      {/* <View style={styles.OverLay}></View> */}
     </View>
   );
 }
